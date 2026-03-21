@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gramya – Discover the timeless beauty, rich culture, and warm traditions of an authentic Indian village." />
+  <title>PANANGADU VELLORE
+</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =============================================
+       NAVIGATION BAR
+       Transparent over video, solid on scroll
+  ============================================= -->
+  <header id="navbar">
+    <nav class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-devanagari">PANANGADU</span>
+        <span class="logo-english">PANANGADU</span>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#culture" class="nav-link">Culture</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =============================================
+       HERO SECTION – Full screen video background
+  ============================================= -->
+  <section id="home" class="hero">
+    <!-- Background video (replace src with your village video) -->
+    <div class="video-wrapper">
+      <video
+        id="heroBgVideo"
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="images/hero.png"
+      >
+        <!--
+          ✏️  REPLACE WITH YOUR OWN VIDEO:
+          <source src="videos/your_village_clip.mp4" type="video/mp4" />
+
+          Using a free Pexels nature video until your real clip is ready.
+        -->
+        <source
+          src="./me.mp4"
+          type="video/mp4"
+        />
+        <!-- 2nd source as fallback for slower connections -->
+        <source
+          src="./me.mp4"
+          type="video/mp4"
+        />
+        <!-- If video cannot load, the poster image is shown -->
+      </video>
+      <!-- Dark overlay for text readability -->
+      <div class="video-overlay"></div>
+      <!-- Animated gradient overlay for extra depth -->
+      <div class="video-gradient"></div>
+    </div>
+
+    <!-- Hero text content -->
+    <div class="hero-content fade-in-hero">
+      <p class="hero-eyebrow">Welcome to</p>
+      <h1 class="hero-title">PANANGADU</h1>
+      <p class="hero-tagline">Panangadu is a small and peaceful village located in the Vellore District of Tamil Nadu</p>
+      <div class="hero-actions">
+        <a href="#about" class="btn btn-primary">Explore Village</a>
+        <a href="#gallery" class="btn btn-outline">View Gallery</a>
+      </div>
+    </div>
+
+    <!-- Video play/pause control button -->
+    <button class="video-control" id="videoControl" aria-label="Pause video">
+      <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor">
+        <rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>
+      </svg>
+      <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+        <polygon points="5,3 19,12 5,21"/>
+      </svg>
+    </button>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       ABOUT SECTION – Village story & details
+  ============================================= -->
+  <section id="about" class="about section-padding">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Left: Image -->
+        <div class="about-image-wrap reveal">
+          <img
+            src="1.png"
+            alt="Aerial view of Gramya village surrounded by green rice fields"
+            class="about-img"
+            loading="lazy"
+          />
+          <div class="about-img-badge">
+            <span class="badge-number">500+</span>
+            <span class="badge-text">Years of History</span>
+          </div>
+        </div>
+
+        <!-- Right: Text -->
+        <div class="about-text reveal reveal-right">
+        
+          <h2 class="section-title">A Land Where <em> பனங்காடு (Panangadu) என்பது வேலூர் மாவட்டம் உட்பட்ட ஒரு சிறிய மற்றும் அமைதியான கிராமம்.
+
+இது அணைக்கட்டு (Anaicut) வட்டத்தில் அமைந்துள்ளது.
+
+இயற்கை சூழலும், பசுமையும் நிறைந்த ஒரு பாரம்பரிய கிராமமாகும்.
+          </p>
+          <p class="about-description">
+            With a population of around 150 families, PANANGADU thrives on agriculture,
+            handicrafts, and community spirit. Every sunrise brings the scent of jasmine
+            from the temple courtyard, the sound of cowbells in the morning mist,
+            and the sight of women in vibrant saris drawing water from the village well.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number">150</span>
+              <span class="stat-label">Families</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">12+</span>
+              <span class="stat-label">Annual Festivals</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Sacred Rivers</span>
+            </div>
+          </div>
+          <a href="#gallery" class="btn btn-primary">See Our Gallery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       GALLERY SECTION – Responsive image grid
+  ============================================= -->
+  <section id="gallery" class="gallery section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Photography</div>
+        <h2 class="section-title">Glimpses of <em>Village Life</em></h2>
+        <p class="section-subtitle">
+          Every frame tells a story — from harvest mornings to festival nights.
+        </p>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="gallery-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="people">People</button>
+        <button class="filter-btn" data-filter="festivals">Festivals</button>
+      </div>
+
+      <!-- Gallery grid -->
+      <div class="gallery-grid">
+        <div class="gallery-item reveal" data-category="festivals">
+          <img src="16.png" alt="Colorful village festival celebration with diyas and rangoli" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Festival of Lights</h3>
+              <p>Diyas &amp; Rangoli</p>
+            </div>
+          </div>
+         </div>
+
+
+
+        <div class="gallery-item reveal gallery-item--tall" data-category="nature">
+          <img src="9.png" alt="Farmers working in lush green rice paddy fields" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Harvest Season</h3>
+              <p>Rice Paddy Fields</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="nature">
+          <img src="8.png" alt="Serene river with women washing clothes at the ghat" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Sacred River</h3>
+              <p>Morning at the Ghat</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="people">
+          <img src="16.png" alt="Happy village children playing in green fields" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Joyful Childhood</h3>
+              <p>Village Kids at Play</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal gallery-item--wide" data-category="festivals">
+          <img src="7.png" alt="Ancient colorful village temple with marigold garlands" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Ancient Temple</h3>
+              <p>Sacred Grounds</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="people">
+          <img src="8.png" alt="Traditional Indian village food served on banana leaf" loading="lazy" />
+          <div class="gallery-overlay">
+            <div class="gallery-info">
+              <h3>Village Feast</h3>
+              <p>Traditional Cuisine</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       VIDEO SECTION – Embedded village videos
+  ============================================= -->
+  <section id="videos" class="videos section-padding">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Visual Stories</div>
+        <h2 class="section-title">Feel the <em>Village Spirit</em></h2>
+        <p class="section-subtitle">Watch the rhythms of daily life unfold.</p>
+      </div>
+
+      <div class="videos-grid">
+        <!-- Replace YouTube IDs with your real videos -->
+        <div class="video-card reveal">
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/FwQGcMmLHRY?rel=0&modestbranding=1"
+              title="Indian Village Morning Life"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="video-card-body">
+            <h3>A Village Morning</h3>
+            <p>Sunrise rituals, temple bells &amp; the first cup of chai.</p>
+          </div>
+        </div>
+
+        <div class="video-card reveal">
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/pEFhVFH9v6A?rel=0&modestbranding=1"
+              title="Indian Farmers in Rice Fields"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="video-card-body">
+            <h3>The Farmer's Life</h3>
+            <p>From planting seeds to the golden harvest — the cycle of life.</p>
+          </div>
+        </div>
+
+        <div class="video-card reveal">
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/3JZ_D3ELwOQ?rel=0&modestbranding=1"
+              title="Indian Village Festival Celebration"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="video-card-body">
+            <h3>Festival Night</h3>
+            <p>Music, dance &amp; color — celebration runs in our blood.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CULTURE SECTION – Traditions, food, festivals
+  ============================================= -->
+  <section id="culture" class="culture section-padding">
+    <!-- Decorative background blob -->
+    <div class="culture-bg-blob" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Heritage</div>
+        <h2 class="section-title">Our Living <em>Culture</em></h2>
+        <p class="section-subtitle">
+          A tapestry woven from centuries of tradition, faith, and celebration.
+        </p>
+      </div>
+
+      <div class="culture-grid">
+        <!-- Culture card 1: Festivals -->
+        <div class="culture-card reveal">
+          <div class="culture-icon">🪔</div>
+          <h3>Festivals</h3>
+          <p>
+            From the luminous splendor of <strong>Diwali</strong> to the riot of color
+            during <strong>Holi</strong>, our calendar is filled with celebrations that
+            bring every family together under the open sky.
+          </p>
+          <ul class="culture-list">
+            <li>Diwali – Festival of Lights</li>
+            <li>Holi – Festival of Colors</li>
+            <li>Pongal – Harvest Thanksgiving</li>
+            <li>Navratri – Nine Nights of Dance</li>
+          </ul>
+        </div>
+
+        <!-- Culture card 2: Food -->
+        <div class="culture-card reveal">
+          <div class="culture-icon">🍲</div>
+          <h3>Village Cuisine</h3>
+          <p>
+            Our food is as rich as our soil — cooked in clay pots over wood fires,
+            seasoned with home-grown spices, and served with the warmth of a mother's love.
+          </p>
+          <ul class="culture-list">
+            <li>Dal-Bati — village lentil bread</li>
+            <li>Rice &amp; Sambar on banana leaf</li>
+            <li>Freshly churned butter &amp; chai</li>
+            <li>Seasonal vegetables from the farm</li>
+          </ul>
+        </div>
+
+        <!-- Culture card 3: Farming -->
+        <div class="culture-card reveal">
+          <div class="culture-icon">🌾</div>
+          <h3>Farming Traditions</h3>
+          <p>
+            Agriculture is not just our livelihood — it is our identity. Generations
+            of farmers have tended the same land with the same devotion,
+            reading the skies and seasons like an open book.
+          </p>
+          <ul class="culture-list">
+            <li>Rice, wheat &amp; sugarcane cultivation</li>
+            <li>Bullock-cart &amp; modern ploughing</li>
+            <li>Organic &amp; natural farming</li>
+            <li>Community harvest celebrations</li>
+          </ul>
+        </div>
+
+        <!-- Culture card 4: Crafts -->
+        <div class="culture-card reveal">
+          <div class="culture-icon">🏺</div>
+          <h3>Arts &amp; Crafts</h3>
+          <p>
+            Every pot, every weave, every painting tells a story. Our artisans preserve
+            crafts passed down through hundreds of generations — an unbroken thread
+            of creativity.
+          </p>
+          <ul class="culture-list">
+            <li>Pottery &amp; terracotta work</li>
+            <li>Handloom weaving &amp; silk</li>
+            <li>Madhubani &amp; Warli paintings</li>
+            <li>Basket &amp; bamboo crafts</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Culture highlight banner -->
+      <div class="culture-banner reveal">
+        <img src="PANO_20231203_094511.jpg" alt="" loading="lazy" />
+        <div class="culture-banner-text">
+          <h3>"They preserve culture, traditions, and natural living."</h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CONTACT / FOOTER SECTION
+  ============================================= -->
+  <footer id="contact" class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- About column -->
+          <div class="footer-col">
+            <div class="footer-logo">
+              <span class="logo-devanagari">ग्रामया</span>
+              <span class="logo-english">Gramya</span>
+            </div>
+            <p class="footer-description">
+              A living testament to India's rich rural heritage, nestled in the heart
+              of nature's abundance.
+            </p>
+            <!-- Social media icons -->
+            <div class="social-links">
+              <!-- Facebook -->
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <!-- Instagram -->
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <!-- YouTube -->
+              <a href="#" class="social-icon" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#fff"/></svg>
+              </a>
+              <!-- Twitter/X -->
+              <a href="#" class="social-icon" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick links column -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Village</a></li>
+              <li><a href="#gallery">Photo Gallery</a></li>
+              <li><a href="#culture">Our Culture</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact info column -->
+          <div class="footer-col">
+            <h4 class="footer-heading">Visit Us</h4>
+            <ul class="footer-contact-list">
+              <li>
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                Gramya Village, Narmada District,<br/>Madhya Pradesh – 456001, India
+              </li>
+              <li>
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+                hello@gramya.in
+              </li>
+              <li>
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                +91 98765 43210
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer bottom bar -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Gramya Village. Made with <span class="heart">♥</span> in India.</p>
+        <p class="footer-credits">Replace content with your real village details.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
