@@ -212,3 +212,170 @@ const counterObserver = new IntersectionObserver(
 );
 
 statNumbers.forEach(el => counterObserver.observe(el));
+
+/* ============================================================
+   9. LIKE & COMMENT SYSTEM
+   - Likes and comments are stored in localStorage per media ID
+   - Comment modal is a shared singleton
+============================================================ */
+
+// ---- Data store helpers ----
+const STORE_KEY = 'panangadu_media';
+
+function loadStore() {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }
+  catch { return {}; }
+}
+
+function saveStore(store) {
+  localStorage.setItem(STORE_KEY, JSON.stringify(store));
+}
+
+function getMediaData(id) {
+  const store = loadStore();
+  if (!store[id]) store[id] = { liked: false, likes: 0, comments: [] };
+  return store[id];
+}
+
+function setMediaData(id, data) {
+  const store = loadStore();
+  store[id] = data;
+  saveStore(store);
+}
+
+// ---- Initialise all buttons with saved counts ----
+function initMediaButtons() {
+  document.querySelectorAll('.like-btn').forEach(btn => {
+    const id = btn.dataset.media;
+    const data = getMediaData(id);
+    btn.querySelector('.like-count').textContent = data.likes;
+    if (data.liked) btn.classList.add('liked');
+  });
+
+  document.querySelectorAll('.comment-btn').forEach(btn => {
+    const id = btn.dataset.media;
+    const data = getMediaData(id);
+    btn.querySelector('.comment-count').textContent = data.comments.length;
+  });
+}
+
+initMediaButtons();
+
+// ---- Like button clicks ----
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.like-btn');
+  if (!btn) return;
+  const id = btn.dataset.media;
+  const data = getMediaData(id);
+
+  if (data.liked) {
+    data.liked = false;
+    data.likes = Math.max(0, data.likes - 1);
+    btn.classList.remove('liked');
+  } else {
+    data.liked = true;
+    data.likes += 1;
+    btn.classList.add('liked');
+  }
+
+  setMediaData(id, data);
+
+  // Update all like-count spans for this media (in case duplicates)
+  document.querySelectorAll(`.like-btn[data-media="${id}"] .like-count`).forEach(el => {
+    el.textContent = data.likes;
+  });
+});
+
+// ---- Comment Modal ----
+const commentModal    = document.getElementById('commentModal');
+const commentModalClose = document.getElementById('commentModalClose');
+const commentModalSubtitle = document.getElementById('commentModalSubtitle');
+const commentList     = document.getElementById('commentList');
+const commentNameInput = document.getElementById('commentNameInput');
+const commentTextInput = document.getElementById('commentTextInput');
+const commentSubmitBtn = document.getElementById('commentSubmitBtn');
+
+let activeMediaId = null;
+
+function openCommentModal(id, title) {
+  activeMediaId = id;
+  commentModalSubtitle.textContent = title ? `📸 ${title}` : '';
+  renderComments(id);
+  commentModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Focus the textarea after animation
+  setTimeout(() => commentTextInput.focus(), 350);
+}
+
+function closeCommentModal() {
+  commentModal.classList.remove('open');
+  document.body.style.overflow = '';
+  activeMediaId = null;
+}
+
+function renderComments(id) {
+  const data = getMediaData(id);
+  commentList.innerHTML = '';
+  data.comments.forEach(c => {
+    const bubble = document.createElement('div');
+    bubble.className = 'comment-bubble';
+    bubble.innerHTML = `
+      <div class="comment-bubble-name">${escapeHtml(c.name || 'Anonymous')}</div>
+      <div class="comment-bubble-text">${escapeHtml(c.text)}</div>
+      <div class="comment-bubble-time">${c.time}</div>
+    `;
+    commentList.appendChild(bubble);
+  });
+  // Scroll to bottom
+  commentList.scrollTop = commentList.scrollHeight;
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function formatTime() {
+  const now = new Date();
+  return now.toLocaleString('en-IN', { day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit' });
+}
+
+// Open on comment-btn click
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.comment-btn');
+  if (!btn) return;
+  openCommentModal(btn.dataset.media, btn.dataset.title);
+});
+
+// Close on X / backdrop
+commentModalClose?.addEventListener('click', closeCommentModal);
+commentModal?.querySelector('.comment-modal-backdrop')?.addEventListener('click', closeCommentModal);
+
+// Close on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && commentModal?.classList.contains('open')) closeCommentModal();
+});
+
+// Submit comment
+function submitComment() {
+  const text = commentTextInput.value.trim();
+  if (!text || !activeMediaId) return;
+
+  const name = commentNameInput.value.trim() || 'Anonymous';
+  const data = getMediaData(activeMediaId);
+  data.comments.push({ name, text, time: formatTime() });
+  setMediaData(activeMediaId, data);
+
+  renderComments(activeMediaId);
+  commentTextInput.value = '';
+
+  // Update comment counts on all matching buttons
+  const count = data.comments.length;
+  document.querySelectorAll(`.comment-btn[data-media="${activeMediaId}"] .comment-count`).forEach(el => {
+    el.textContent = count;
+  });
+}
+
+commentSubmitBtn?.addEventListener('click', submitComment);
+commentTextInput?.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submitComment(); }
+});

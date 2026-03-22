@@ -628,6 +628,73 @@ ul, ol {
   color: var(--color-white);
 }
 
+/* ✨ Thiruvizha – Special highlighted filter button */
+.filter-btn--thiruvizha {
+  background: linear-gradient(135deg, var(--color-amber), var(--color-gold));
+  border-color: var(--color-gold);
+  color: var(--color-white);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  box-shadow: 0 0 14px rgba(212, 160, 23, 0.45);
+  animation: thiruvizhaGlow 2.2s ease-in-out infinite;
+  position: relative;
+  overflow: visible;
+}
+
+.filter-btn--thiruvizha::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-gold-light);
+  opacity: 0;
+  animation: thiruvizhaPulse 2.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes thiruvizhaGlow {
+  0%, 100% { box-shadow: 0 0 14px rgba(212,160,23,0.45); }
+  50%       { box-shadow: 0 0 28px rgba(240,200,64,0.75); }
+}
+
+@keyframes thiruvizhaPulse {
+  0%   { opacity: 0; transform: scale(1); }
+  50%  { opacity: 0.6; transform: scale(1.06); }
+  100% { opacity: 0; transform: scale(1.12); }
+}
+
+.filter-btn--thiruvizha:hover,
+.filter-btn--thiruvizha.active {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  border-color: var(--color-gold-light);
+  color: var(--color-earth);
+  box-shadow: 0 0 36px rgba(240,200,64,0.8);
+  transform: translateY(-2px) scale(1.04);
+  animation: none;
+}
+
+/* Thiruvizha gallery items get a golden badge glow on hover */
+.gallery-item[data-category="thiruvizha"] {
+  box-shadow: 0 0 0 2px var(--color-gold);
+}
+
+.gallery-item[data-category="thiruvizha"]::after {
+  content: '🎺 Thiruvizha';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, var(--color-amber), var(--color-gold));
+  color: var(--color-white);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  z-index: 6;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  pointer-events: none;
+}
+
 /* Gallery grid – CSS grid masonry-style */
 .gallery-grid {
   display: grid;
@@ -1156,6 +1223,39 @@ ul, ol {
   }
 }
 
+/* ============================================================
+   TOUCH DEVICE FIX – Like & Comment always visible on mobile
+   On Android/iOS there is no hover, so .media-actions (which
+   is shown only on :hover) must be permanently visible.
+============================================================ */
+@media (hover: none), (pointer: coarse) {
+  /* Gallery: always show action bar */
+  .media-actions {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    background: linear-gradient(to top, rgba(10,6,2,0.78) 0%, transparent 100%);
+  }
+
+  /* Make action buttons larger for finger tapping */
+  .action-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    min-height: 36px;
+    min-width: 60px;
+  }
+
+  .action-btn svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  /* Comment modal: full-width on phones */
+  .comment-modal-box {
+    max-width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-actions {
     flex-direction: column;
@@ -1174,3 +1274,295 @@ ul, ol {
   .about-img { height: 300px; }
   .about-img-badge { right: 0; bottom: -16px; }
 }
+
+/* ----------------------------------------------------------
+   LIKE & COMMENT – Media Action Buttons
+---------------------------------------------------------- */
+
+/* --- Gallery items: action bar slides up on hover --- */
+.media-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  background: linear-gradient(to top, rgba(10,6,2,0.82) 0%, transparent 100%);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 5;
+}
+
+.gallery-item:hover .media-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Video cards: action row inside card body --- */
+.video-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* --- Shared action button base --- */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.38rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+}
+
+.action-btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.action-btn:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-1px);
+}
+
+/* --- Like button: active / liked state --- */
+.like-btn.liked {
+  background: rgba(220, 53, 80, 0.25);
+  border-color: rgba(220, 53, 80, 0.6);
+  color: #ff6b81;
+}
+
+.like-btn.liked svg {
+  fill: #ff6b81;
+  stroke: #ff6b81;
+  transform: scale(1.25);
+}
+
+/* Heart pop animation */
+@keyframes heartPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.5); }
+  70%  { transform: scale(0.9); }
+  100% { transform: scale(1.25); }
+}
+.like-btn.liked svg {
+  animation: heartPop 0.35s ease forwards;
+}
+
+/* Comment button hover accent */
+.comment-btn:hover {
+  background: rgba(90,138,58,0.25);
+  border-color: rgba(90,138,58,0.6);
+  color: var(--color-sage);
+}
+.comment-btn:hover svg {
+  stroke: var(--color-sage);
+}
+
+/* ----------------------------------------------------------
+   COMMENT MODAL
+---------------------------------------------------------- */
+.comment-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.comment-modal.open {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.comment-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,6,2,0.55);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+.comment-modal-box {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 540px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 1.75rem 1.75rem 2rem;
+  transform: translateY(30px);
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.comment-modal.open .comment-modal-box {
+  transform: translateY(0);
+}
+
+/* Header */
+.comment-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.comment-modal-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-earth);
+}
+
+.comment-modal-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-parchment);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+.comment-modal-close:hover {
+  background: var(--color-sand);
+  transform: rotate(90deg);
+}
+.comment-modal-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Subtitle */
+.comment-modal-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+
+/* Comment list */
+.comment-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding-right: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sand) transparent;
+}
+
+.comment-list:empty::after {
+  content: 'No comments yet — be the first! 🌿';
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin: auto;
+  display: block;
+  padding: 1.5rem 0;
+}
+
+/* Individual comment bubble */
+.comment-bubble {
+  background: var(--color-parchment);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  animation: commentSlideIn 0.3s ease forwards;
+}
+@keyframes commentSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.comment-bubble-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-forest);
+  margin-bottom: 0.25rem;
+}
+
+.comment-bubble-text {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.comment-bubble-time {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  margin-top: 0.3rem;
+}
+
+/* Input area */
+.comment-input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 1px solid var(--color-parchment);
+  padding-top: 1rem;
+  flex-shrink: 0;
+}
+
+.comment-input-area input,
+.comment-input-area textarea {
+  width: 100%;
+  border: 1.5px solid var(--color-parchment);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background: var(--color-cream);
+  transition: border-color 0.2s;
+  resize: none;
+  outline: none;
+}
+.comment-input-area input:focus,
+.comment-input-area textarea:focus {
+  border-color: var(--color-forest-mid);
+}
+
+.comment-submit-btn {
+  align-self: flex-end;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .comment-modal-box {
+    padding: 1.25rem 1.1rem 1.5rem;
+    max-height: 90vh;
+  }
+}
+

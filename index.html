@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gramya – Discover the timeless beauty, rich culture, and warm traditions of an authentic Indian village." />
-  <title>PANANGADU VELLORE
-</title>
+  <meta name="description" content="Panangadu – Discover the timeless beauty, rich culture, and warm traditions of Panangadu village, Vellore." />
+  <title>panangaduvellore.com</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,8 +23,8 @@
   <header id="navbar">
     <nav class="nav-container">
       <div class="nav-logo">
-        <span class="logo-devanagari">PANANGADU</span>
-        <span class="logo-english">PANANGADU</span>
+        <span class="logo-devanagari">panangaduvellore.com</span>
+        <span class="logo-english">panangaduvellore.com</span>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -116,7 +115,7 @@
         <div class="about-image-wrap reveal">
           <img
             src="1.png"
-            alt="Aerial view of Gramya village surrounded by green rice fields"
+            alt="Aerial view of Panangadu village surrounded by green rice fields"
             class="about-img"
             loading="lazy"
           />
@@ -180,71 +179,272 @@
         <button class="filter-btn" data-filter="nature">Nature</button>
         <button class="filter-btn" data-filter="people">People</button>
         <button class="filter-btn" data-filter="festivals">Festivals</button>
+        <button class="filter-btn filter-btn--thiruvizha" data-filter="thiruvizha">🎺 Thiruvizha</button>
       </div>
 
       <!-- Gallery grid -->
       <div class="gallery-grid">
-        <div class="gallery-item reveal" data-category="festivals">
-          <img src="16.png" alt="Colorful village festival celebration with diyas and rangoli" loading="lazy" />
-          <div class="gallery-overlay">
-            <div class="gallery-info">
-              <h3>Festival of Lights</h3>
-              <p>Diyas &amp; Rangoli</p>
-            </div>
-          </div>
-         </div>
 
-
-
-        <div class="gallery-item reveal gallery-item--tall" data-category="nature">
-          <img src="9.png" alt="Farmers working in lush green rice paddy fields" loading="lazy" />
-          <div class="gallery-overlay">
-            <div class="gallery-info">
-              <h3>Harvest Season</h3>
-              <p>Rice Paddy Fields</p>
-            </div>
+        <!-- Image 1 -->
+        <div class="gallery-item reveal" data-category="nature" data-id="gal-1">
+          <img src="1.png" alt="Panangadu village photo 1" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Panangadu</h3><p>Village Life</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-1" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-1" data-title="Panangadu Photo 1" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
           </div>
         </div>
 
-        <div class="gallery-item reveal" data-category="nature">
-          <img src="8.png" alt="Serene river with women washing clothes at the ghat" loading="lazy" />
-          <div class="gallery-overlay">
-            <div class="gallery-info">
-              <h3>Sacred River</h3>
-              <p>Morning at the Ghat</p>
-            </div>
+        <!-- Image 2 -->
+        <div class="gallery-item reveal gallery-item--tall" data-category="nature" data-id="gal-2">
+          <img src="2.png" alt="Panangadu village photo 2" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Natural Beauty</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-2" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-2" data-title="Panangadu Photo 2" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
           </div>
         </div>
 
-        <div class="gallery-item reveal" data-category="people">
-          <img src="16.png" alt="Happy village children playing in green fields" loading="lazy" />
-          <div class="gallery-overlay">
-            <div class="gallery-info">
-              <h3>Joyful Childhood</h3>
-              <p>Village Kids at Play</p>
-            </div>
+        <!-- Image 3 -->
+        <div class="gallery-item reveal" data-category="people" data-id="gal-3">
+          <img src="3.jpg" alt="Panangadu village photo 3" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Village People</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-3" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-3" data-title="Panangadu Photo 3" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
           </div>
         </div>
 
-        <div class="gallery-item reveal gallery-item--wide" data-category="festivals">
-          <img src="7.png" alt="Ancient colorful village temple with marigold garlands" loading="lazy" />
-          <div class="gallery-overlay">
-            <div class="gallery-info">
-              <h3>Ancient Temple</h3>
-              <p>Sacred Grounds</p>
-            </div>
+        <!-- Image 4 -->
+        <div class="gallery-item reveal gallery-item--wide" data-category="thiruvizha" data-id="gal-4">
+          <img src="4.jpg" alt="Panangadu village photo 4" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Village Festival</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-4" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-4" data-title="Panangadu Photo 4" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
           </div>
         </div>
 
-        <div class="gallery-item reveal" data-category="people">
-          <img src="8.png" alt="Traditional Indian village food served on banana leaf" loading="lazy" />
-          <div class="gallery-overlay">
-            <div class="gallery-info">
-              <h3>Village Feast</h3>
-              <p>Traditional Cuisine</p>
-            </div>
+        <!-- Image 5 -->
+        <div class="gallery-item reveal" data-category="nature" data-id="gal-5">
+          <img src="5.jpg" alt="Panangadu village photo 5" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Green Fields</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-5" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-5" data-title="Panangadu Photo 5" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
           </div>
         </div>
+
+        <!-- Image 6 -->
+        <div class="gallery-item reveal" data-category="festivals" data-id="gal-6">
+          <img src="6.png" alt="Panangadu village photo 6" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Sacred Temple</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-6" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-6" data-title="Panangadu Photo 6" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 7 -->
+        <div class="gallery-item reveal gallery-item--tall" data-category="thiruvizha" data-id="gal-7">
+          <img src="7.png" alt="Panangadu village photo 7" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Temple Gopuram</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-7" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-7" data-title="Panangadu Photo 7" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 8 -->
+        <div class="gallery-item reveal" data-category="nature" data-id="gal-8">
+          <img src="8.png" alt="Panangadu village photo 8" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Morning Ghat</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-8" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-8" data-title="Panangadu Photo 8" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 9 -->
+        <div class="gallery-item reveal" data-category="nature" data-id="gal-9">
+          <img src="9.png" alt="Panangadu village photo 9" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Paddy Fields</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-9" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-9" data-title="Panangadu Photo 9" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 10 -->
+        <div class="gallery-item reveal gallery-item--wide" data-category="people" data-id="gal-10">
+          <img src="10.png" alt="Panangadu village photo 10" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Village Scene</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-10" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-10" data-title="Panangadu Photo 10" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 11 -->
+        <div class="gallery-item reveal" data-category="people" data-id="gal-11">
+          <img src="11.png" alt="Panangadu village photo 11" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Daily Life</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-11" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-11" data-title="Panangadu Photo 11" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 12 -->
+        <div class="gallery-item reveal" data-category="nature" data-id="gal-12">
+          <img src="12.png" alt="Panangadu village photo 12" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Village Path</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-12" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-12" data-title="Panangadu Photo 12" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 13 -->
+        <div class="gallery-item reveal gallery-item--tall" data-category="thiruvizha" data-id="gal-13">
+          <img src="13.png" alt="Panangadu village photo 13" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Celebration</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-13" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-13" data-title="Panangadu Photo 13" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 14 -->
+        <div class="gallery-item reveal" data-category="people" data-id="gal-14">
+          <img src="14.png" alt="Panangadu village photo 14" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Community</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-14" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-14" data-title="Panangadu Photo 14" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 15 -->
+        <div class="gallery-item reveal" data-category="nature" data-id="gal-15">
+          <img src="15.png" alt="Panangadu village photo 15" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Scenic View</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-15" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-15" data-title="Panangadu Photo 15" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 16 -->
+        <div class="gallery-item reveal gallery-item--wide" data-category="thiruvizha" data-id="gal-16">
+          <img src="16.png" alt="Panangadu village photo 16" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Festival Lights</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-16" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-16" data-title="Panangadu Photo 16" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 17 -->
+        <div class="gallery-item reveal" data-category="people" data-id="gal-17">
+          <img src="17.png" alt="Panangadu village photo 17" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Village Folk</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-17" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-17" data-title="Panangadu Photo 17" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 18 -->
+        <div class="gallery-item reveal" data-category="nature" data-id="gal-18">
+          <img src="18.png" alt="Panangadu village photo 18" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Village Landscape</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-18" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-18" data-title="Panangadu Photo 18" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 19 -->
+        <div class="gallery-item reveal gallery-item--tall" data-category="nature" data-id="gal-19">
+          <img src="19.png" alt="Panangadu village photo 19" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Countryside</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-19" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-19" data-title="Panangadu Photo 19" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 20 -->
+        <div class="gallery-item reveal" data-category="thiruvizha" data-id="gal-20">
+          <img src="20.png" alt="Panangadu village photo 20" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Cultural Event</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-20" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-20" data-title="Panangadu Photo 20" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 21 -->
+        <div class="gallery-item reveal" data-category="people" data-id="gal-21">
+          <img src="21.png" alt="Panangadu village photo 21" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Village Moments</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-21" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-21" data-title="Panangadu Photo 21" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 22 -->
+        <div class="gallery-item reveal gallery-item--wide" data-category="nature" data-id="gal-22">
+          <img src="22.png" alt="Panangadu village photo 22" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Open Fields</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-22" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-22" data-title="Panangadu Photo 22" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 23 -->
+        <div class="gallery-item reveal" data-category="people" data-id="gal-23">
+          <img src="23.png" alt="Panangadu village photo 23" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Village Heart</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-23" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-23" data-title="Panangadu Photo 23" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 24 -->
+        <div class="gallery-item reveal" data-category="festivals" data-id="gal-24">
+          <img src="24.png" alt="Panangadu village photo 24" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Traditions</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-24" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-24" data-title="Panangadu Photo 24" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 25 -->
+        <div class="gallery-item reveal gallery-item--tall" data-category="nature" data-id="gal-25">
+          <img src="25.png" alt="Panangadu village photo 25" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Village Beauty</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-25" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-25" data-title="Panangadu Photo 25" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
+        <!-- Image 26 -->
+        <div class="gallery-item reveal" data-category="people" data-id="gal-26">
+          <img src="26.png" alt="Panangadu village photo 26" loading="lazy" />
+          <div class="gallery-overlay"><div class="gallery-info"><h3>Village Pride</h3><p>Panangadu</p></div></div>
+          <div class="media-actions">
+            <button class="action-btn like-btn" data-media="gal-26" aria-label="Like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="like-count">0</span></button>
+            <button class="action-btn comment-btn" data-media="gal-26" data-title="Panangadu Photo 26" aria-label="Comment"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="comment-count">0</span></button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -262,26 +462,36 @@
 
       <div class="videos-grid">
         <!-- Replace YouTube IDs with your real videos -->
-        <div class="video-card reveal">
+        <div class="video-card reveal" data-id="vid-1">
           <div class="video-embed">
             <iframe
-              src="https://www.youtube.com/embed/FwQGcMmLHRY?rel=0&modestbranding=1"
-              title="Indian Village Morning Life"
+              src="https://www.youtube.com/embed/il8mv05GZL8"
+              title="Festival Vibes"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
               loading="lazy"
             ></iframe>
           </div>
           <div class="video-card-body">
-            <h3>A Village Morning</h3>
-            <p>Sunrise rituals, temple bells &amp; the first cup of chai.</p>
+            <h3>Festival Vibes</h3>
+            <p>fstval of our village</p>
+            <div class="video-actions">
+              <button class="action-btn like-btn" data-media="vid-1" aria-label="Like">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span class="like-count">0</span>
+              </button>
+              <button class="action-btn comment-btn" data-media="vid-1" data-title="Festival Vibes" aria-label="Comment">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span class="comment-count">0</span>
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="video-card reveal">
+        <div class="video-card reveal" data-id="vid-2">
           <div class="video-embed">
             <iframe
-              src="https://www.youtube.com/embed/pEFhVFH9v6A?rel=0&modestbranding=1"
+              src="https://www.youtube.com/shorts/LstO4nRG3vI"
               title="Indian Farmers in Rice Fields"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
@@ -291,13 +501,23 @@
           <div class="video-card-body">
             <h3>The Farmer's Life</h3>
             <p>From planting seeds to the golden harvest — the cycle of life.</p>
+            <div class="video-actions">
+              <button class="action-btn like-btn" data-media="vid-2" aria-label="Like">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span class="like-count">0</span>
+              </button>
+              <button class="action-btn comment-btn" data-media="vid-2" data-title="The Farmer's Life" aria-label="Comment">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span class="comment-count">0</span>
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="video-card reveal">
+        <div class="video-card reveal" data-id="vid-3">
           <div class="video-embed">
             <iframe
-              src="https://www.youtube.com/embed/3JZ_D3ELwOQ?rel=0&modestbranding=1"
+              src="https://www.youtube.com/shorts/il8mv05GZL8"
               title="Indian Village Festival Celebration"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
@@ -307,6 +527,16 @@
           <div class="video-card-body">
             <h3>Festival Night</h3>
             <p>Music, dance &amp; color — celebration runs in our blood.</p>
+            <div class="video-actions">
+              <button class="action-btn like-btn" data-media="vid-3" aria-label="Like">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span class="like-count">0</span>
+              </button>
+              <button class="action-btn comment-btn" data-media="vid-3" data-title="Festival Night" aria-label="Comment">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span class="comment-count">0</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -418,8 +648,8 @@
           <!-- About column -->
           <div class="footer-col">
             <div class="footer-logo">
-              <span class="logo-devanagari">ग्रामया</span>
-              <span class="logo-english">Gramya</span>
+              <span class="logo-devanagari">panangaduvellore.com</span>
+              <span class="logo-english">panangaduvellore.com</span>
             </div>
             <p class="footer-description">
               A living testament to India's rich rural heritage, nestled in the heart
@@ -432,7 +662,7 @@
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               </a>
               <!-- Instagram -->
-              <a href="#" class="social-icon" aria-label="Instagram">
+              <a href="https://www.instagram.com/panangadu_2026/" target="_blank" rel="noopener" class="social-icon social-icon--instagram" aria-label="Instagram @PANANGADU_2026">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
               <!-- YouTube -->
@@ -466,13 +696,13 @@
                 <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
                 </svg>
-                Gramya Village, Narmada District,<br/>Madhya Pradesh – 456001, India
+                Panangadu Village, Vellore District,<br/>Tamil Nadu – 632001, India
               </li>
               <li>
                 <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                 </svg>
-                hello@gramya.in
+                hello@panangaduvellore.com
               </li>
               <li>
                 <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -482,6 +712,25 @@
               </li>
             </ul>
           </div>
+
+          <!-- Instagram QR column -->
+          <div class="footer-col footer-col--instagram">
+            <h4 class="footer-heading">Follow on Instagram</h4>
+            <a href="https://www.instagram.com/panangadu_2026/" target="_blank" rel="noopener" class="insta-qr-link" aria-label="Visit @PANANGADU_2026 on Instagram">
+              <div class="insta-qr-wrap">
+                <img src="instagram_qr.png" alt="Scan to follow @PANANGADU_2026 on Instagram" class="insta-qr-img" />
+                <div class="insta-qr-overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="insta-open-icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  <span>Open Profile</span>
+                </div>
+              </div>
+            </a>
+            <p class="insta-handle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;vertical-align:middle;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <a href="https://www.instagram.com/panangadu_2026/" target="_blank" rel="noopener">@PANANGADU_2026</a>
+            </p>
+            <p class="insta-hint">📷 Scan QR for village news &amp; updates</p>
+          </div>
         </div>
       </div>
     </div>
@@ -489,11 +738,31 @@
     <!-- Footer bottom bar -->
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2026 Gramya Village. Made with <span class="heart">♥</span> in India.</p>
+        <p>&copy; 2026 panangaduvellore.com. Made with <span class="heart">♥</span> in India.</p>
         <p class="footer-credits">Replace content with your real village details.</p>
       </div>
     </div>
   </footer>
+
+  <!-- Comment Modal -->
+  <div id="commentModal" class="comment-modal" role="dialog" aria-modal="true" aria-labelledby="commentModalTitle">
+    <div class="comment-modal-backdrop"></div>
+    <div class="comment-modal-box">
+      <div class="comment-modal-header">
+        <h3 id="commentModalTitle">Comments</h3>
+        <button class="comment-modal-close" id="commentModalClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="comment-modal-subtitle" id="commentModalSubtitle"></div>
+      <div class="comment-list" id="commentList"></div>
+      <div class="comment-input-area">
+        <input type="text" id="commentNameInput" placeholder="Your name" maxlength="40" />
+        <textarea id="commentTextInput" placeholder="Write a comment…" maxlength="300" rows="3"></textarea>
+        <button class="btn btn-primary comment-submit-btn" id="commentSubmitBtn">Post Comment</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Main JavaScript -->
   <script src="script.js"></script>
